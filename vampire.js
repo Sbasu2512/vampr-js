@@ -10,7 +10,7 @@ class Vampire {
 
   // Adds the vampire as an offspring of this vampire
   addOffspring(vampire) {
-  this.vampire.push(vampire);
+  this.offspring.push(vampire);
   vampire.creator = this;
   }
 
@@ -26,10 +26,11 @@ class Vampire {
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
-    if(this.yearConverted > vampire.yearConverted){
+    if(this.yearConverted < vampire.yearConverted){
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   /** Stretch **/
@@ -59,5 +60,5 @@ elgort.addOffspring(andrew);
 
 console.log(bart.isMoreSeniorThan(andrew));
 
-module.exports = vampire;
+module.exports = Vampire;
 
