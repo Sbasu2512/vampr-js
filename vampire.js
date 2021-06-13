@@ -21,7 +21,25 @@ class Vampire {
 
   // Returns the number of vampires away from the original vampire this vampire is
   get numberOfVampiresFromOriginal() {
-    
+    /*
+     let numberOfPeople = 0;
+    let currentEmployee = this;
+    // climb "up" the tree (using iteration), counting nodes, until no boss is found
+    while (currentEmployee.boss) {
+      currentEmployee = currentEmployee.boss;
+      numberOfPeople++;
+    }
+
+    return numberOfPeople;
+    */
+   let numOfVamps = 0;
+   let currentVamp = this.vampire;
+   //goin down the tree, counting offspring until no offspring is found
+   while(currentVamp.offspring) {
+     currentVamp = this.vampire;
+     numOfVamps++;
+   }
+   return numOfVamps;
   }
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
@@ -59,6 +77,7 @@ ansel.addOffspring(sarah);
 elgort.addOffspring(andrew);
 
 console.log(bart.isMoreSeniorThan(andrew));
+console.log(andrew.numberOfVampiresFromOriginal)
 
 module.exports = Vampire;
 
