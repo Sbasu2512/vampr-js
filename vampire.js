@@ -21,22 +21,11 @@ class Vampire {
 
   // Returns the number of vampires away from the original vampire this vampire is
   get numberOfVampiresFromOriginal() {
-    /*
-     let numberOfPeople = 0;
-    let currentEmployee = this;
-    // climb "up" the tree (using iteration), counting nodes, until no boss is found
-    while (currentEmployee.boss) {
-      currentEmployee = currentEmployee.boss;
-      numberOfPeople++;
-    }
-
-    return numberOfPeople;
-    */
    let numOfVamps = 0;
-   let currentVamp = this.vampire;
-   //goin down the tree, counting offspring until no offspring is found
-   while(currentVamp.offspring) {
-     currentVamp = this.vampire;
+   let currentVamp = this;
+   //goin up the tree, counting creator until no creator is found i.e, root node
+   while(currentVamp.creator) {
+     currentVamp = currentVamp.creator;
      numOfVamps++;
    }
    return numOfVamps;
@@ -59,7 +48,10 @@ class Vampire {
   // * when comparing Ansel and Sarah, Ansel is the closest common anscestor.
   // * when comparing Ansel and Andrew, Ansel is the closest common anscestor.
   closestCommonAncestor(vampire) {
-
+    let currentVamp = this;
+    while(currentVamp.creator){
+      
+    }
   }
 }
 
@@ -78,6 +70,7 @@ elgort.addOffspring(andrew);
 
 console.log(bart.isMoreSeniorThan(andrew));
 console.log(andrew.numberOfVampiresFromOriginal)
+//console.log(original.numberOfOffspring);
 
 module.exports = Vampire;
 
