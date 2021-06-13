@@ -44,5 +44,20 @@ class Vampire {
   }
 }
 
-module.exports = Vampire;
+const original = new Vampire("mikel", 1);
+const ansel = new Vampire("ansel", 5);
+const bart = new Vampire("bart", 7)
+const elgort = new Vampire("elgort", 10);
+const sarah = new Vampire("sarah", 15);
+const andrew = new Vampire("andrew", 30);
+
+original.addOffspring(ansel);
+original.addOffspring(bart);
+ansel.addOffspring(elgort);
+ansel.addOffspring(sarah);
+elgort.addOffspring(andrew);
+
+console.log(bart.isMoreSeniorThan(andrew));
+
+module.exports = vampire;
 
