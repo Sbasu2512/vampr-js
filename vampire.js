@@ -58,12 +58,18 @@ class Vampire {
 
     // Returns the vampire object with that name, or null if no vampire exists with that name
   vampireWithName(name) {
+    if(this.name === name){
+      return true;
+    }else {
+      return false;
+    }
 
   }
 
   // Returns the total number of vampires that exist
   get totalDescendents() {
-
+    let totalDescendents = 0;
+    totalDescendents += this.numberOfOffspring.length ;
   }
 
   // Returns an array of all the vampires that were converted after 1980
