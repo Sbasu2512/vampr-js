@@ -32,12 +32,10 @@ class Vampire {
   }
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
-  isMoreSeniorThan(vampire) {
+  isMoreSeniorThan(vampire=false) {
     if(this.yearConverted < vampire.yearConverted){
       return true;
-    } else {
-      return false;
-    }
+    } 
   }
 
   /** Stretch **/
@@ -56,6 +54,22 @@ class Vampire {
         return this.offspring[i];
       }
     }
+//**** Tree Traversal Methods ***/
+
+    // Returns the vampire object with that name, or null if no vampire exists with that name
+  vampireWithName(name) {
+
+  }
+
+  // Returns the total number of vampires that exist
+  get totalDescendents() {
+
+  }
+
+  // Returns an array of all the vampires that were converted after 1980
+  get allMillennialVampires() {
+
+  }
 }
 
 const original = new Vampire("mikel", 1);
@@ -71,9 +85,9 @@ ansel.addOffspring(elgort);
 ansel.addOffspring(sarah);
 elgort.addOffspring(andrew);
 
-console.log(bart.isMoreSeniorThan(andrew));
-console.log(andrew.numberOfVampiresFromOriginal)
+// console.log(bart.isMoreSeniorThan(andrew));
+//  console.log(original.numberOfVampiresFromOriginal)
 //console.log(original.numberOfOffspring);
-
+ console.log(andrew.closestCommonAncestor(sarah));
 module.exports = Vampire;
 
